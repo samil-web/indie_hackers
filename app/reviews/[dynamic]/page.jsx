@@ -15,7 +15,6 @@ export async function generateMetadata({ params:{dynamic} }){
     return({title})
 }
 export default async function ReviewPage({params:{dynamic}}){
-    console.log(dynamic)
     const {title,date,image,body} = await getReview(dynamic)
     return(
         <>
