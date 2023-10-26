@@ -15,9 +15,9 @@ export default async function HomePage(){
         <Heading>Indie Gamer Reviews</Heading>
         <div className="flex flex-wrap w-screen justify-around">
         {reviews.map((review) => (
-            <ul key={review.dynamic}>
+            <ul key={review.slug}>
             <li className="text-orange-800 hover:underline border w-80 bg-white text-center mb-2">
-            <Link  href={`/reviews/${review.dynamic}`}>
+            <Link  href={`/reviews/${review.slug}`}>
             <img src={`${review.image}`} alt="" width={320} height={180} className=" rounded-t">
             </img>
             <div className="py-1">{review.title}</div>

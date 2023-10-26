@@ -2,7 +2,6 @@
 import Heading from "@/components/Heading"
 import ShareLinkButton from "@/components/ShareLinkButton"
 import { getReview, getStatic } from "@/lib/reviews"
-import dynamic from "next/dynamic"
 
 export async function generateStaticParams(){
     
@@ -10,12 +9,12 @@ export async function generateStaticParams(){
     return statics.map((staticroute) => ({staticroute}))
 }
 
-export async function generateMetadata({ params:{dynamic} }){
-    const {title} = await getReview(dynamic)
+export async function generateMetadata({ params:{slug} }){
+    const {title} = await getReview(slug)
     return({title})
 }
-export default async function ReviewPage({params:{dynamic}}){
-    const {title,date,image,body} = await getReview(dynamic)
+export default async function ReviewPage({params:{slug}}){
+    const {title,date,image,body} = await getReview(slug)
     return(
         <>
         <Heading>{title}</Heading>
